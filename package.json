@@ -16,7 +16,7 @@
     },
     "dependencies" : {
         "pkginfo" : "0.2.x",
-        "xml2json" : "0.3.x"
+        "xml2json" : "~0.5"
     },
     "devDependencies": {
         "oauth": "0.9.7",
