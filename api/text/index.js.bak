@@ -23,6 +23,7 @@ var proto = {
     router : JSON.parse(fs.readFileSync(__dirname + "/router.json", "utf8")),
 
     requestClient : function(config, options, callback){
+        //console.log(options)
         var req = require(config.protocol).request(options, function(res){
             var data = "";
             res.on("data", function(chunk){
