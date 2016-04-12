@@ -21,3 +21,5 @@ var Client = module.exports = function(config){
     self[self.service] = new serviceClt(self);
 };
 
+Client.log = Util.log
+
