@@ -35,7 +35,7 @@ var proto = {
                 }
                 else {
                     res.data = data;
-                    var retJson = Util.toJson(res.data,{object:true});
+                    var retJson = Util.toJson(res.data);
                     callback(null, retJson);
                 }
             });
