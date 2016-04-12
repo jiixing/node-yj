@@ -94,10 +94,10 @@ exports.isFalse = function(c){
 };
 
 var levels = {
-    "info":  ["\033[90m", "\033[39m"], // grey
-    "error": ["\033[31m", "\033[39m"], // red
-    "fatal": ["\033[35m", "\033[39m"], // magenta
-    "exit":  ["\033[36m", "\033[39m"]  // cyan
+    "info":  ["\u001b"+"[90m", "\u001b"+"[39m"], // grey
+    "error": ["\u001b"+"[31m", "\u001b"+"[39m"], // red
+    "fatal": ["\u001b"+"[35m", "\u001b"+"[39m"], // magenta
+    "exit":  ["\u001b"+"[36m", "\u001b"+"[39m"]  // cyan
 };
 var _slice = Array.prototype.slice;
 
@@ -145,10 +145,10 @@ exports.makeParams = function(params){
     var isFirst = true;
     for( var prop in params ){
         if( !isFirst ){
-            ret += "&" + prop + "=" + params[prop];
+            ret += "&" + prop + "=" + encodeURIComponent(params[prop]);
         }
         else{
-            ret += prop + "=" + params[prop];
+            ret += prop + "=" + encodeURIComponent(params[prop]);
         }
         isFirst = false;
     }
